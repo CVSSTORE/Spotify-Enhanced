@@ -144,8 +144,8 @@ This is a pre-release and has not been fully playtested. It is made against Taur
 
 ## Credits
 
-- [Taurus](https://github.com/samj-exe/taurus) by samj-exe
-- chroma.pw/spoti.pw by darkk, which Taurus is a fork of
+- [Taurus](https://github.com/samj-exe/taurus) by samj-exe.
+- [chroma.pw/spoti.pw](https://github.com/skopevoj/spoti.pw) by skopevoj.
 
 ## Disclaimer
 
