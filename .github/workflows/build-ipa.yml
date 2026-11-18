@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       ipa_url:
-        description: "Direct link to a decrypted Spotify IPA"
-        required: true
+        description: "Direct link to a decrypted Spotify IPA (leave as is to use the archive.org 9.1.78 build)"
+        required: false
+        default: "https://archive.org/download/com.spotify.client_9.1.78_und3fined_202609/com.spotify.client_9.1.78_und3fined.ipa"
         type: string
       upload_method:
         description: "Where to put the result"
@@ -42,7 +43,7 @@ jobs:
       - name: Download IPA
         run: |
           mkdir -p ipa
-          curl -fsSL "${{ inputs.ipa_url }}" -o ipa/spotify.ipa
+          curl -fsSL --retry 3 "${{ inputs.ipa_url || 'https://archive.org/download/com.spotify.client_9.1.78_und3fined_202609/com.spotify.client_9.1.78_und3fined.ipa' }}" -o ipa/spotify.ipa
           case "$(file --mime-type -b ipa/spotify.ipa)" in application/zip|application/x-ios-app) ;; *) echo "::error::Not an IPA"; exit 1 ;; esac
 
       - run: make release
