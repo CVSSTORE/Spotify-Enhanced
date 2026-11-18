@@ -1,125 +1,152 @@
-<h1 align="center">Taurus.</h1>
+<div align="center">
 
-<p align="center">Open-Sourced fork of chroma.pw with built-in Spotify Premium. </p>
+# Spotify Enhanced
 
-<p align="center">
-  <img src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" alt="iOS">
-  <img src="https://img.shields.io/badge/Spotify-9.1.90-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify 9.1.78">
-  <img src="https://img.shields.io/badge/Objective--C-3A95E3?style=for-the-badge&logo=apple&logoColor=white" alt="Objective-C">
-  <img src="https://img.shields.io/badge/GitHub_Actions-2671E5?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions">
-</p>
+**A podcast enhancement add-on for Taurus, the open-sourced Spotify tweak (v0.60.5)**
 
-<p align="center">
-  <a href="#build-it">Build it</a> ·
-  <a href="docs/tweaks.md">Hack on it</a> ·
-  <a href="#install-it">Install it</a>
-</p>
+Fresh starts, blocked sections, per-episode authors, song-style rows and podcast listening stats.
 
+![me](Showcase.gif)
 
+[![Tweak](https://img.shields.io/badge/TWEAK-TAURUS%20v0.60.5-1ed760?style=flat-square)](https://github.com/samj-exe/taurus/releases)
+[![Type](https://img.shields.io/badge/TYPE-SOURCE%20ADD--ON-555555?style=flat-square)](https://github.com/samj-exe/taurus/releases)
+[![Language](https://img.shields.io/badge/LANGUAGE-OBJECTIVE--C-3a95e3?style=flat-square)](https://github.com/samj-exe/taurus)
+[![Stars](https://img.shields.io/github/stars/samj-exe/taurus?style=flat-square&label=STARS)](https://github.com/samj-exe/taurus/stargazers)
+[![Releases](https://img.shields.io/github/v/release/samj-exe/taurus?include_prereleases&style=flat-square&label=LATEST)](https://github.com/samj-exe/taurus/releases)
 
-## Taurus: the free, open-sourced liquid glass spotify tweak 
+</div>
 
-<h1 align="center">Taurus Podcasts</h1> <p align="center">A podcast add-on for <a href="https://github.com/samj-exe/taurus">Taurus</a>, the open-sourced Spotify tweak.</p> <p align="center"> <img src="https://img.shields.io/badge/Taurus-v0.60.5-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Taurus v0.60.5"> <img src="https://img.shields.io/badge/Objective--C-3A95E3?style=for-the-badge&logo=apple&logoColor=white" alt="Objective-C"> <img src="https://img.shields.io/badge/Add--on-Source-555555?style=for-the-badge" alt="Source add-on"> </p> <p align="center"> <a href="#features">Features</a> · <a href="#install-it">Install it</a> · <a href="#credits">Credits</a> </p>
+---
 
+## What is Spotify Enhanced?
 
-A no-jailbreak Theos tweak that rebuilds Spotify for iOS in Liquid Glass, injected into your own
-decrypted IPA and signed with your own certificate.
+Spotify Enhanced adds quality-of-life improvements for **podcasts** to **Taurus** while keeping the rest of the tweak intact. Everything lives on one new page, **Mod Settings → Podcasts**.
 
-Built and tested on **Spotify 9.1.90** — use that version's IPA. The mod hooks Spotify's own classes,
-which change between releases, so another version may build and then break.
+The project is an add-on for [Taurus](https://github.com/samj-exe/taurus), which is an open-sourced fork of chroma.pw with built-in Spotify Premium. It is distributed as a zip with the new and changed source files, plus one patch made against Taurus v0.60.5.
 
-| | |
-|---|---|
-| The redesign | **iOS 26+** |
-| Legacy look | iOS 16.1+ |
-| Live Activity | iOS 17+ |
+> [!IMPORTANT]
+> This is not an IPA or a `.deb` on its own. You add it to the Taurus source and build Taurus again. No Spotify files are included, you still need your own decrypted Spotify IPA as described in the Taurus README.
 
-The redesign is `UIGlassEffect`, which only exists from iOS 26. Below that the Redesigned UI switch
-is greyed out and the mod runs Spotify's own screens with everything else it adds on top. Both live
-in Settings → Mod Settings.
+## What this adds
 
-## Downloads
+- **Always start at 0:00.** A podcast episode begins at the start, not where you left off.
+- **Restart when you press play.** After a pause, pressing play sends the episode back to 0:00.
+- **Blocked sections.** Skip time ranges of an episode, for example an ad or an intro. They are skipped in playlists too. A range can run to the end of the episode, and then playback moves on to the next one.
+- **Podcast listening stats.** Podcast minutes count in Listening stats, next to songs.
+- **Song-style rows.** Podcast episodes on a show page, a playlist and Your Library can be drawn as song rows, with the podcast's author under the title.
+- **Author per episode.** Replace the author name shown under any episode with your own.
+- **Skip like songs.** Next and previous in the player and on the lock screen, in place of the ±15 seconds buttons. On by default.
 
-Mod Settings → **Downloads** controls Spotify's offline downloads: download or check the current track
-or album, cancel a download, inspect quotas and device slots, and review status. Spotify's own download
-buttons also work; downloaded songs stay in Spotify's offline storage and play in Spotify.
+### Settings
 
-Downloads patching is verified for **Spotify 9.1.90**. Other versions build without the executable
-patch; pass `--no-downloads` to skip it explicitly. The engine is
-[Pixie](https://github.com/Glongq/Vitrine-Pixie), by Glongq; see `extension/Downloads/`.
+| Setting | What it does | Default |
+|---|---|---|
+| Always start at 0:00 | An episode begins at the start | Off |
+| Restart when you press play | Pause, then play: back to 0:00 | Off |
+| Skip blocked sections | Jump over the parts you blocked | Turns on when you block your first section |
+| Blocked sections | The list of ranges, tap to change, swipe to remove | Empty |
+| Episodes look like songs | Song-style rows for episodes (Redesigned look only) | Off |
+| Author per episode | Names that replace an episode's author | Empty |
+| Skip like songs | Next and previous in place of ±15 seconds | On |
 
-## Install it
+### Blocking a section
 
-Each
-[release](https://github.com/samj-exe/taurus/releases) carries the tweak's `.ipa`, install this `.ipa` file with any sideloader, such as SideStore or Feather. You do not need to build to project if you do not wish to.
+Play the episode, then open **Mod Settings → Podcasts → Blocked sections → Block part of what's playing**. Times look like `2:10` or `1:02:10`. Leave the end empty to block to the end of the episode.
 
-Add the release source to [SideStore or Feather](https://raw.githubusercontent.com/samj-exe/taurus/stable/altstore-source.json), or add the [ESign source](https://raw.githubusercontent.com/samj-exe/taurus/stable/esign-source.json) in ESign.
+Block `2:10 – 14:00` and the episode plays from 0:00 to 2:10, then carries on at 14:00. Sections that overlap or touch are chained into one.
 
-## Build it
+## What is not included
 
-Bring a decrypted **Spotify 9.1.78 or 9.1.90** IPA; you get an unsigned
-`Taurus-<mod version>.ipa` to sign with SideStore, Feather or any certificate signer. Each
-[release](https://github.com/samj-exe/taurus/releases) also carries the tweak's `.deb`.
+- Changes to the music side of Taurus, this add-on only touches podcasts
+- Changes to Spotify's own downloads, lyrics or Live Activity
+- Any Spotify app files, IPAs or signing certificates
+- Support for other Taurus versions, see [Supported versions](#supported-versions)
 
-#### Build with GitHub Actions (recommended)
+## Supported versions
 
-Fork the repo, enable Actions, run **Build IPA from your own Spotify IPA**. It takes a direct link to
-your decrypted `.ipa` and hands the built IPA back as a workflow artifact. No Mac needed; the link is
-masked in the log and the result stays in your fork.
+| Project | Version | Supported |
+|---|---|---|
+| Taurus | v0.60.5 | Yes |
+| Taurus | Other versions | Not tested, copy the files by hand |
+| Redesigned UI (song-style rows) | iOS 26+ | Yes |
+| Everything else | Same as Taurus | Yes |
 
-#### Build on a Mac
+Song-style rows only exist in the Redesigned look, which needs iOS 26 or newer. The other podcast settings work in either look.
 
-Theos in `~/theos` and Xcode with an iPhoneOS 26+ SDK (`xcode-select` it). An SDK in `~/theos/sdks`
-alone builds too, but without the Live Activity. Then:
+## How to add it
 
-    brew install make ldid dpkg zsign ideviceinstaller libimobiledevice
-    uv tool install "cyan @ git+https://github.com/asdfzxcvbn/pyzule-rw"
+1. Download `Podcast-Addon.zip` from the [Releases](https://github.com/samj-exe/taurus/releases) page and unzip it.
+2. Add it to your copy of the Taurus repo with one of the two options below.
+3. Build Taurus as usual, see [Building](#building).
 
-Put the decrypted `.ipa` in `ipa/`, then:
+**Option A: copy**
 
-    make release    # out/Taurus-<version>.ipa, ready to sign
-    make install    # the same, signed with your certificate and pushed over USB
+Copy the `tweak/` and `docs/` folders from the zip over the repo and accept the replacements.
 
-`make install` reads `SIGN_P12`, `SIGN_PROFILE` and `SIGN_P12_PASSWORD` from `.signing.env`; copy
-`.signing.env.example` and fill it in.
+**Option B: patch**
 
-The first build spends a minute reading Spotify's flags out of your IPA. `make flags` regenerates it.
+From the root of the Taurus repo:
 
-### Signing
+```
+git apply podcasts.patch
+```
 
-Sign with a bundle id matching your certificate's App ID. If it doesn't match, the app still works
-but tapping the player on the lock screen won't open it — and it tells you on first launch which id
-to use. In Feather, copy the App ID into **Identifier** and leave **PPQ protection** off; AltStore,
-SideStore and Sideloadly get this right on their own.
+The patch was made against Taurus v0.60.5. If it does not apply, use option A.
 
-The app keeps Spotify's bundle id, so it installs over the real Spotify.
+### What changes
 
-## Contributing
+New files:
 
-Pull requests are welcome. The pull request's description has a box for agreeing to the
-[Contributor License Agreement](CLA.md), which gives the project's owner the rights to the
-contribution; it is ticked once, before the first pull request is merged.
+- `tweak/Sources/Shared/Podcasts/` (5 files: `PodcastBlocks.m`, `PodcastPlayback.x`, `Podcasts.h`, `PodcastSkips.x`, `PodcastsSettings.m`)
+- `tweak/Sources/Redesigned/Album/PodcastRows.x`
 
-## Star history
+Changed files:
 
-<a href="https://star-history.com/#samj-exe/taurus&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=samj-exe/taurus&type=Date&theme=dark">
-    <img src="https://api.star-history.com/svg?repos=samj-exe/taurus&type=Date" alt="Star history chart">
-  </picture>
-</a>
+- `tweak/Sources/App/ModSettings.x`
+- `tweak/Sources/Redesigned/Album/AlbumHeader.x`
+- `tweak/Sources/Shared/ListeningStats/ListeningStats.h`
+- `tweak/Sources/Shared/ListeningStats/ListeningStats.x`
+- `docs/tweaks.md`
+
+## Building
+
+You only need this to get the add-on into an IPA. The Taurus Makefile picks up the new files by itself.
+
+**With GitHub Actions (recommended):** push the changed files to your fork of Taurus, enable Actions and run **Build IPA from your own Spotify IPA** with a direct link to your decrypted Spotify 9.1.90 IPA.
+
+**On a Mac:** Theos in `~/theos` and Xcode with an iPhoneOS 26+ SDK, then put the decrypted `.ipa` in `ipa/` and run:
+
+```
+make release
+```
+
+The unsigned `Taurus-<version>.ipa` ends up in `out/`. Sign it with SideStore, Feather or any certificate signer. See the [Taurus README](https://github.com/samj-exe/taurus) for the full setup.
+
+## How it works
+
+For the curious. `PodcastPlayback.x` watches the episode playing, and a 0.15 s timer runs only while an episode with blocked sections plays, or while a new episode's first position is awaited. Blocked sections are stored per episode URI as start and end seconds, and `PodcastBlocks.m` finds where playback has to go. Nothing leaves the phone. More detail is in `docs/tweaks.md`.
+
+## Versions
+
+Each release is tagged with the project name and a version number. `Spotify Enhanced` is the first release, later updates use `SE-v1.1`, `SE-v1.2` and so on.
+
+<!--
+## What does it look like?
+Add screenshots here once you have them, for example:
+
+![Blocked sections](screenshots/blocked-sections.png)
+![Song-style rows](screenshots/song-rows.png)
+-->
+
+## Known issues
+
+This is a pre-release and has not been fully playtested. It is made against Taurus v0.60.5 and not tested on other versions. If you find a bug, please open an issue and include the Taurus and Spotify versions, the steps to reproduce it and, if possible, a screenshot.
 
 ## Credits
 
-chroma.pw/spoti.pw by darkk
+- [Taurus](https://github.com/samj-exe/taurus) by samj-exe
+- chroma.pw/spoti.pw by darkk, which Taurus is a fork of
 
-[cyan](https://github.com/asdfzxcvbn/pyzule-rw) injects, [Theos](https://theos.dev) builds, and
-[FLEX](https://github.com/FLEXTool/FLEX), as hopeless's AutoFLEX build in `vendor/`, is the inspector
-the view trees are read through.
+## Disclaimer
 
-All modified and distributed code from chroma.pw is licensed under GPL-3.0, no code under PolyForm Strict License 1.0.0 is distributed. 
-Not affiliated with Spotify.
-
-## Safari link opener
-
-IPA builds include the Open in Spotify Safari extension. See [setup, coverage and verification](docs/safari-extension.md). Run `make test-safari` for regression checks; use `SAFARI=0` to build without it.
+This is a fan project. It is not affiliated with, endorsed by or sponsored by Spotify. Spotify and all related names are trademarks of their respective owners. This repository contains no Spotify app files, only source code for the add-on.
