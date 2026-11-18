@@ -124,7 +124,7 @@ The unsigned `Taurus-<version>.ipa` ends up in `out/`. Sign it with SideStore, F
 
 ## How it works
 
-The file `PodcastPlayback.x` watches the episode playing, and a 0.15 s timer runs only while an episode with blocked sections plays, or while a new episode's first position is awaited. Blocked sections are stored per episode URI as start and end seconds, and `PodcastBlocks.m` finds where playback has to go. Nothing leaves the phone. More detail is in `docs/tweaks.md`.
+The file `PodcastPlayback.x` watches the episode playing, and a 0.15s timer runs only while an episode with blocked sections plays, or while a new episode's first position is awaited. Blocked sections are stored per episode URI as start and end seconds, and `PodcastBlocks.m` finds where playback has to go. Nothing leaves the phone. More detail is in `docs/tweaks.md`.
 
 ## Versions
 
