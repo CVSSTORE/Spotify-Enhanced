@@ -19,6 +19,9 @@
 
 ## Taurus: the free, open-sourced liquid glass spotify tweak 
 
+<h1 align="center">Taurus Podcasts</h1> <p align="center">A podcast add-on for <a href="https://github.com/samj-exe/taurus">Taurus</a>, the open-sourced Spotify tweak.</p> <p align="center"> <img src="https://img.shields.io/badge/Taurus-v0.60.5-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Taurus v0.60.5"> <img src="https://img.shields.io/badge/Objective--C-3A95E3?style=for-the-badge&logo=apple&logoColor=white" alt="Objective-C"> <img src="https://img.shields.io/badge/Add--on-Source-555555?style=for-the-badge" alt="Source add-on"> </p> <p align="center"> <a href="#features">Features</a> · <a href="#install-it">Install it</a> · <a href="#credits">Credits</a> </p>
+
+
 A no-jailbreak Theos tweak that rebuilds Spotify for iOS in Liquid Glass, injected into your own
 decrypted IPA and signed with your own certificate.
 
